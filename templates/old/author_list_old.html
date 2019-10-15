@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publisher_list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<a href="/add_author/">点我添加</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>id</th>
+        <th>出版社</th>
+        <th>作品</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for author in author_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ author.id }}</td>
+            <td>{{ author.name }}</td>
+            <td>
+                {% for book in author.book.all %}    {# 多对多的属性 author.book.all #}
+                    {% if forloop.last %}
+                        {{ book.title }}
+                    {% else %}
+                        {{ book.title }},
+                    {% endif %}
+{#                    {{ book.title }}&nbsp;#}    {# 用空格分隔 #}
+
+
+                {% endfor %}
+
+            </td>
+            <td>
+                <a href="/del_author/?id={{ author.id }}">删除</a>
+                <a href="/edit_author/?id={{ author.id }}">编辑</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<form action="/edit_publisher/" method="post">
+    <p>
+        <input type="text" name="id" value="{{ publisher.id }}" style="display: none">
+        <input type="text" name="publisher_name" value="{{ publisher.name }}">
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+    <p style="color: red">{{ error }}</p>
+
+</form>
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

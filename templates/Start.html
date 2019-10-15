@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/dashboard/ -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>后台管理</title>
+    <!-- Custom styles for this template -->
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/Dashboard_files/dashboard.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<!--上方导航栏 开始-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://v3.bootcss.com/examples/dashboard/#">项目名称</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">导航</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">设置</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">福利</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">帮助</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="搜索...">
+            </form>
+        </div>
+    </div>
+</nav>
+<!--上方导航栏 结束-->
+
+<!--正文内容 开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航框 开始-->
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="/start/">校园生活 <span class="sr-only">(current)</span></a>
+                </li>
+                <li><a href="/publisher_list/">
+                    <span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
+                    出版社管理</a>
+                </li>
+                <li><a href="/book_list/">
+                    <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                    书籍管理</a></li>
+                <li><a href="/author_list/">
+                    <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> 作者管理</a>
+                </li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">
+                    <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 行</a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">锄禾日当午</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">汗滴禾下土</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">谁知盘中餐</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">粒粒皆辛苦</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">好诗好诗</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">Nav item again</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">One more nav</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">Another nav item</a></li>
+            </ul>
+        </div>
+        <!--左侧导航框 结束-->
+
+        <!--右侧信息框 开始-->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">学生管理
+                <small>明星学员</small>
+            </h1>
+            <div class="row placeholders">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="/static/imgs/chen200.jpg"
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>陈磊</h4>
+                    <span class="text-muted">我有一头小毛驴，我从来也不骑 </span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="/static/imgs/gao200.jpg"
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>高方方</h4>
+                    <span class="text-muted">我相信我就是我我相信明天</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="/static/imgs/le200.jpg"
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>乐志鲁</h4>
+                    <span class="text-muted">如果大海能够，带回曾经的爱</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="/static/imgs/meng200.jpg"
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>孟宪武</h4>
+                    <span class="text-muted">我和我的祖国，一刻也不能分割</span>
+                </div>
+            </div>
+
+            <!--面板 学生管理 开始-->
+            <div class="panel panel-default panel-primary">
+                <div class="panel-heading">学生管理</div>
+
+                <div class="panel-body">
+                    <!--搜索框和添加图标 开始-->
+                    <div class="row my-table-toolbar">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="搜索...">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button">走你!</button></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1 pull-right">
+                            <button class="btn btn-success" data-toggle="modal" data-target="#myModal">添加</button>
+                        </div>
+                    </div>
+                    <!--搜索框和添加图标 结束-->
+
+                    <!--学生信息表 开始-->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>籍贯</th>
+                                <th>学号</th>
+                                <th>班级</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>高方方</td>
+                                <td>18</td>
+                                <td>河南洛阳</td>
+                                <td>2017085207</td>
+                                <td>专硕三班</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>孟宪武</td>
+                                <td>19</td>
+                                <td>江西上饶</td>
+                                <td>2017085208</td>
+                                <td>专硕三班</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>王有情</td>
+                                <td>20</td>
+                                <td>江西景德镇</td>
+                                <td>2017085209</td>
+                                <td>专硕三班</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>陈磊</td>
+                                <td>22</td>
+                                <td>江西南昌</td>
+                                <td>2017085210</td>
+                                <td>专硕三班</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>徐凯旋</td>
+                                <td>21</td>
+                                <td>山东青岛</td>
+                                <td>2017085211</td>
+                                <td>专硕三班</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>乐志鲁</td>
+                                <td>22</td>
+                                <td>江西九江</td>
+                                <td>2017085212</td>
+                                <td>专硕三班</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--学生信息表 结束-->
+                </div>
+                <!--分页-->
+                <nav aria-label="Page navigation" class="text-center">
+                    <ul class="pagination ">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--面板 学生管理 结束-->
+
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="/static/imgs/2.jpg" alt="">
+                        <div class="caption">
+                            <h3>南昌校区</h3>
+                            <p>东华理工大学（East China University of
+                                Technology），简称“东华理工（ECUT）”，是江西省人民政府与国家国防科技工业局、中华人民共和国自然资源部、中国核工业集团公司共建高校，
+                                入选国家“中西部高校基础能力建设工程”。
+                            </p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">了解详情</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="/static/imgs/1.jpg" alt="">
+                        <div class="caption">
+                            <h3>行政楼</h3>
+                            <p> 截至2018年12月，学校有南昌和抚州两个校区，校园总面积2500余亩；在校生3万余人；拥有江西省唯一一个国家级国际联合研究中心；是原核工业部第一所直属高校。
+                                是一所具有地学和核科学特色，以理工为主，经、管、文、法、教、艺兼备的多科性大学。
+                            </p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">了解详情</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="/static/imgs/3.jpg" alt="">
+                        <div class="caption">
+                            <h3>全景图</h3>
+                            <p>2017年2月，东华理工大学入选中西部高校基础能力建设工程（二期）。8月，学校入选2017年度“高等学校学科创新引智计划”（“111计划”）。
+                                12月，学校地质资源与地质工程、化学和电子科学与技术等3个学科入选江西省一流学科。棒棒棒
+                            </p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">了解详情</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--右侧信息框 结束-->
+    </div>
+</div>
+<!--正文内容 结束-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<style>
+    .my-table-toolbar {
+        padding-bottom: 20px;
+    }
+</style>
+
+
+</body>
+</html>

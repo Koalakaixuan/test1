@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/dashboard/ -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>添加书籍</title>
+    <!-- Custom styles for this template -->
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/Dashboard_files/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--上方导航栏 开始-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://v3.bootcss.com/examples/dashboard/#">项目名称</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">导航</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">设置</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">福利</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">帮助</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="搜索...">
+            </form>
+        </div>
+    </div>
+</nav>
+<!--上方导航栏 结束-->
+
+<!--正文内容 开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航框 开始-->
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/start/">校园生活 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="active"><a href="/publisher_list/">
+                    <span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
+                    出版社管理</a>
+                </li>
+                <li><a href="/book_list/">
+                    <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                    书籍管理</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">
+                    <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> 作者管理</a>
+                </li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">
+                    <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 行</a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">锄禾日当午</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">汗滴禾下土</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">谁知盘中餐</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">粒粒皆辛苦</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">好诗好诗</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">Nav item again</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">One more nav</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">Another nav item</a></li>
+            </ul>
+        </div>
+        <!--左侧导航框 结束-->
+
+        <!--右侧信息框 开始-->
+        <div class="col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="panel panel-default panel-primary">
+                <div class="panel-heading">添加书籍</div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" action="/add_book/" method="post">
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">书名</label>
+                            <div class="col-sm-10 col-md-6">
+                                <input type="text" class="form-control" name="book_title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label  class="col-sm-2 control-label">选择出版社</label>
+                            <div class="col-sm-10">
+                                <select name="publisher">
+                                    {% for publisher in publisher_list %}
+                                        <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <input type="submit" value="提交">
+{#                                <p style="color: red">{{ error }}</p>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!--右侧信息框 结束-->
+    </div>
+</div>
+<!--正文内容 结束-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<style>
+    .my-table-toolbar {
+        padding-bottom: 20px;
+    }
+</style>
+
+
+</body>
+</html>

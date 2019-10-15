@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加作者</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加作者</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" action="/add_author/" method="post">
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">作者名字</label>
+                            <div class="col-sm-10 col-md-6">
+                                <input type="text" class="form-control" name="author_name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label  class="col-sm-2 control-label">作品</label>
+                            <div class="col-sm-10">
+                                <select multiple name="books">
+            {% for book in book_list %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+            {% endfor %}
+        </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <input type="submit" value="提交">
+                                <p style="color: red">{{ error }}</p>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+    </div>
+</div>
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<form action="/edit_author/" method="post">
+    <input type="text" name="author_id" value="{{ author.id }}" style="display: none">
+    <p>作者名字
+        <input type="text" name="author_name" value="{{ author.name }}">
+    </p>
+    <p>作品
+        <select multiple name="books">
+            {% for book in book_list %}
+                {% if book in author.book.all %}
+                    <option selected value="{{ book.id }}">{{ book.title }}</option>
+                {% else %}
+                    <option value="{{ book.id }}">{{ book.title }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+    <p style="color: red">{{ error }}</p>
+
+</form>
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

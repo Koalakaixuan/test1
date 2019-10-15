@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/dashboard/ -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>作者管理</title>
+    <!-- Custom styles for this template -->
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/Dashboard_files/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--上方导航栏 开始-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://v3.bootcss.com/examples/dashboard/#">项目名称</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">导航</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">设置</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">福利</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">帮助</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="搜索...">
+            </form>
+        </div>
+    </div>
+</nav>
+<!--上方导航栏 结束-->
+
+<!--正文内容 开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航框 开始-->
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/start/">校园生活 <span class="sr-only">(current)</span></a>
+                </li>
+                <li><a href="/publisher_list/">
+                    <span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
+                    出版社管理</a>
+                </li>
+                <li ><a href="/book_list/">
+                    <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                    书籍管理</a></li>
+                <li class="active"><a href="/author_list/">
+                    <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> 作者管理</a>
+                </li>
+                <li><a href="http://www.sogo.com">
+                    <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 搜狗</a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">锄禾日当午</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">汗滴禾下土</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">谁知盘中餐</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">粒粒皆辛苦</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">好诗好诗</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">Nav item again</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">One more nav</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/">Another nav item</a></li>
+            </ul>
+        </div>
+        <!--左侧导航框 结束-->
+
+        <!--右侧信息框 开始-->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <!--面板 出版社管理 开始-->
+            <div class="panel panel-default panel-primary">
+                <div class="panel-heading">作者管理</div>
+
+                <div class="panel-body">
+                    <!--搜索框和添加图标 开始-->
+                    <div class="row my-table-toolbar">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="搜索...">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button">走你!</button></span>
+                            </div>
+                        </div>
+{#                        <div class="col-md-2 pull-right">#}
+{#                            <button class="btn btn-success" data-toggle="modal" data-target="#myModal">添加</button>#}
+{#                        </div>#}
+                    </div>
+                    <!--搜索框和添加图标 结束-->
+
+                    <!--图书管理表 开始-->
+                    <div class="table-responsive">
+                        <a href="/add_author/" class="btn btn-success pull-right"><i class="fa fa-plus fa-fw"></i>点我添加</a>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>id</th>
+                                <th>出版社</th>
+                                <th>作品</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for author in author_list %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ author.id }}</td>
+                                    <td>{{ author.name }}</td>
+                                    <td>
+                                        {% for book in author.book.all %}    {# 多对多的属性 author.book.all #}
+                                            {% if forloop.last %}
+                                                {{ book.title }}
+                                            {% else %}
+                                                {{ book.title }},
+                                            {% endif %}
+                                            {#                    {{ book.title }}&nbsp;#}    {# 用空格分隔 #}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" href="/del_author/?id={{ author.id }}"><i class="fa fa-trash fa-fw" ></i>删除</a>
+                                        <a class="btn btn-info" href="/edit_author/?id={{ author.id }}"><i class="fa fa-pencil fa-fw" ></i>编辑</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--图书管理 结束-->
+                </div>
+                <!--分页-->
+                <nav aria-label="Page navigation" class="text-center">
+                    <ul class="pagination ">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--面板  出版社管理 结束-->
+
+        </div>
+        <!--右侧信息框 结束-->
+    </div>
+</div>
+<!--正文内容 结束-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<style>
+    .my-table-toolbar {
+        padding-bottom: 20px;
+    }
+</style>
+
+
+</body>
+</html>
